@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Theme picker</title>
+
+    <link rel="stylesheet" href="lch/index.css">
+    <link rel="stylesheet" href="lch/inputs.css">
+    <link rel="stylesheet" href="./article.css">
+</head>
+<body>
+
+    <header></header>
+
+    <main>
+        <aside>
+            <input type="range" max="360" min="0" id="hue" class="hue">
+            <input type="range" max="200" min="0" id="chroma" class="chroma" value="50">
+            <input type="range" max="200" min="0" id="lightness" class="lightness" value="50">
+        </aside>
+        <article class="article">
+            <h2>Big Header</h2>
+            <p>Paragraph text. Paragraph text. Paragraph text. Paragraph text. Paragraph text. </p>
+            <form action="">
+                <label>
+                    <span>Name</span>
+                    <input type="text">
+                </label>
+                <p>Are you married?</p>
+                <label>
+                    <input type="radio" name="married" value="yes">
+                    <span>yes</span>
+                </label>
+                <label>
+                    <input type="radio" name="married" value="no">
+                    <span>no</span>
+                </label>
+                <p>Check your skills:</p>
+                <label>
+                    <input type="checkbox">
+                    <span>fronted</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span>backend</span>
+                </label>
+                <label>
+                    <input type="checkbox">
+                    <span>quality</span>
+                </label>
+            </form>
+            <button>Button</button>
+        </article>
+    </main>
+
+    <footer></footer>
+
+    <script src="index.js"></script>
+    <script src="inputs/inputs.js"></script>
+</body>
+</html>

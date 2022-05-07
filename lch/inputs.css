@@ -1,0 +1,118 @@
+:root {
+    --current-hue: 100;
+    --current-chroma: 50;
+    --current-lightness: 50%;
+}
+
+input[type="range"] {
+    height: 3em;
+    width: 100%;
+    margin: 0;
+
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    height: calc(100% + 10px);
+    width: 1em;
+    margin-top: -5px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 5px solid #444a;
+
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-moz-range-thumb  {
+    height: calc(100% + 10px);
+    width: 1em;
+    margin-top: -5px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 5px solid #444a;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    border-radius: 10px;
+    height: 100%;
+}
+
+input[type="range"]::-moz-range-track {
+    border-radius: 10px;
+    height: 100%;
+}
+
+input[type="range"].hue::-webkit-slider-runnable-track {
+    background-image: linear-gradient(to right,
+    lch(var(--current-lightness) var(--current-chroma) 0),
+    lch(var(--current-lightness) var(--current-chroma) 22.5),
+    lch(var(--current-lightness) var(--current-chroma) 45),
+    lch(var(--current-lightness) var(--current-chroma) 67.5),
+    lch(var(--current-lightness) var(--current-chroma) 90),
+    lch(var(--current-lightness) var(--current-chroma) 112.5),
+    lch(var(--current-lightness) var(--current-chroma) 135),
+    lch(var(--current-lightness) var(--current-chroma) 157.5),
+    lch(var(--current-lightness) var(--current-chroma) 180),
+    lch(var(--current-lightness) var(--current-chroma) 202.5),
+    lch(var(--current-lightness) var(--current-chroma) 225),
+    lch(var(--current-lightness) var(--current-chroma) 247.5),
+    lch(var(--current-lightness) var(--current-chroma) 270),
+    lch(var(--current-lightness) var(--current-chroma) 292.5),
+    lch(var(--current-lightness) var(--current-chroma) 315),
+    lch(var(--current-lightness) var(--current-chroma) 337.5),
+    lch(var(--current-lightness) var(--current-chroma) 0 )
+    );
+}
+
+input[type="range"].chroma::-webkit-slider-runnable-track {
+    background-image: linear-gradient(to right,
+    lch(var(--current-lightness) 0   var(--current-hue)),
+    lch(var(--current-lightness) 10  var(--current-hue)),
+    lch(var(--current-lightness) 20  var(--current-hue)),
+    lch(var(--current-lightness) 30  var(--current-hue)),
+    lch(var(--current-lightness) 40  var(--current-hue)),
+    lch(var(--current-lightness) 50  var(--current-hue)),
+    lch(var(--current-lightness) 60  var(--current-hue)),
+    lch(var(--current-lightness) 70  var(--current-hue)),
+    lch(var(--current-lightness) 80  var(--current-hue)),
+    lch(var(--current-lightness) 90  var(--current-hue)),
+    lch(var(--current-lightness) 100 var(--current-hue))
+    );
+}
+
+input[type="range"].lightness::-webkit-slider-runnable-track {
+    background-image: linear-gradient(to right,
+    lch(0%   var(--current-chroma) var(--current-hue)),
+    lch(10%  var(--current-chroma) var(--current-hue)),
+    lch(20%  var(--current-chroma) var(--current-hue)),
+    lch(30%  var(--current-chroma) var(--current-hue)),
+    lch(40%  var(--current-chroma) var(--current-hue)),
+    lch(50%  var(--current-chroma) var(--current-hue)),
+    lch(60%  var(--current-chroma) var(--current-hue)),
+    lch(70%  var(--current-chroma) var(--current-hue)),
+    lch(80%  var(--current-chroma) var(--current-hue)),
+    lch(90%  var(--current-chroma) var(--current-hue)),
+    lch(100% var(--current-chroma) var(--current-hue))
+    );
+}
+
+@supports not (color: lch(50% 50 0)) {
+    :root {
+        --fallback-hue-gradient: '';
+        --fallback-chroma-gradient: '';
+        --fallback-lightness-gradient: '';
+    }
+
+    input[type="range"].hue::-webkit-slider-runnable-track {
+        background-image: var(--fallback-hue-gradient)
+    }
+
+    input[type="range"].chroma::-webkit-slider-runnable-track {
+        background-image: var(--fallback-chroma-gradient)
+    }
+
+    input[type="range"].lightness::-webkit-slider-runnable-track {
+        background-image: var(--fallback-lightness-gradient)
+    }
+}

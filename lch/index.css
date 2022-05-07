@@ -1,0 +1,25 @@
+:root {
+    font-family: Arial, sans-serif;
+    background-color: hsl(var(--current-hue), calc(var(--current-chroma) * 1%), var(--current-lightness));
+}
+
+main {
+    margin: 5em auto;
+    width: min(80%, 700px);
+    padding: 1.5em;
+    border-radius: 1em;
+    border: 5px solid #444a;
+    background-color: #fffe;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+label {
+    font-size: 20px;
+}
+
+label span {
+    display: block;
+    margin-bottom: 0.5em;
+}

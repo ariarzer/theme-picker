@@ -1,0 +1,23 @@
+.article {
+    font: inherit;
+    accent-color: var(--accent);
+
+    --primary: #000;
+    --primary-alternative: #000;
+    --secondary: #000;
+    --accent: lch(50% 50 var(--current-hue));
+    --accent-hover: lch(50% 50 var(--current-hue));
+    --accent-secondary: #000;
+
+    --text-primary: #000;
+    --text-secondary: #000;
+    --text-link: #000;
+
+    --control-primary: #000;
+    --control-primary-hover: #000;
+    --control-primary-active: #000;
+
+    --control-secondary: #000;
+    --control-secondary-hover: #000;
+    --control-secondary-active: #000;
+}
