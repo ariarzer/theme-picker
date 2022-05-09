@@ -1,23 +1,53 @@
-.article {
+.article[light] {
     font: inherit;
-    accent-color: var(--accent);
 
-    --primary: #000;
-    --primary-alternative: #000;
-    --secondary: #000;
-    --accent: lch(50% 50 var(--current-hue));
-    --accent-hover: lch(50% 50 var(--current-hue));
-    --accent-secondary: #000;
+    --primary-bg: lch(var(--current-lightness) 10 var(--current-hue));
+    --primary: color-contrast(
+            var(--primary-bg) vs
+            lch(
+                    clamp(
+                            calc(abs(calc(var(--current-lightness) - 100%)) / 2),
+                            calc(abs(calc(var(--current-lightness) - 100%)) * 2 - 10%),
+                            calc(abs(calc(var(--current-lightness) - 100%)) / 2 + 50%)
+                    ) 10 var(--current-hue)),
+            lch(
+                    clamp(
+                            calc(abs(calc(var(--current-lightness) - 100%)) / 2),
+                            calc(abs(calc(var(--current-lightness) - 100%)) * 2 - 90%),
+                            calc(abs(calc(var(--current-lightness) - 100%)) / 2 + 50%)
+                    ) 10 var(--current-hue)));
 
-    --text-primary: #000;
-    --text-secondary: #000;
-    --text-link: #000;
+}
 
-    --control-primary: #000;
-    --control-primary-hover: #000;
-    --control-primary-active: #000;
+.article {
+    padding: 1em;
+    border-radius: 1em;
+    background-color: var(--primary-bg);
+    color: var(--primary);
+}
 
-    --control-secondary: #000;
-    --control-secondary-hover: #000;
-    --control-secondary-active: #000;
+.article h2 {
+    margin-top: 0;
+}
+
+.article label {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.article label span {
+    margin-bottom: 0;
+}
+
+.article button {
+    font-size: inherit;
+    font-family: inherit;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    border: none;
+}
+
+.article fieldset {
+    margin-bottom: 1em;
 }

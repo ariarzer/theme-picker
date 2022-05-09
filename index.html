@@ -15,10 +15,10 @@
     <main>
         <aside>
             <input type="range" max="360" min="0" id="hue" class="hue">
-            <input type="range" max="200" min="0" id="chroma" class="chroma" value="50">
-            <input type="range" max="200" min="0" id="lightness" class="lightness" value="50">
+            <input type="range" max="132" min="0" id="chroma" class="chroma" value="50">
+            <input type="range" max="100" min="0" id="lightness" class="lightness" value="50">
         </aside>
-        <article class="article">
+        <article class="article" light>
             <h2>Big Header</h2>
             <p>Paragraph text. Paragraph text. Paragraph text. Paragraph text. Paragraph text. </p>
             <form action="">
@@ -26,28 +26,31 @@
                     <span>Name</span>
                     <input type="text">
                 </label>
-                <p>Are you married?</p>
-                <label>
-                    <input type="radio" name="married" value="yes">
-                    <span>yes</span>
-                </label>
-                <label>
-                    <input type="radio" name="married" value="no">
-                    <span>no</span>
-                </label>
-                <p>Check your skills:</p>
-                <label>
-                    <input type="checkbox">
-                    <span>fronted</span>
-                </label>
-                <label>
-                    <input type="checkbox">
-                    <span>backend</span>
-                </label>
-                <label>
-                    <input type="checkbox">
-                    <span>quality</span>
-                </label>
+                <p>Are you married?
+                    <label>
+                        <input type="radio" name="married" value="yes">
+                        <span>yes</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="married" value="no">
+                        <span>no</span>
+                    </label>
+                </p>
+                <fieldset>
+                <legend>Check your skills:</legend>
+                    <label>
+                        <input type="checkbox">
+                        <span>fronted</span>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <span>backend</span>
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        <span>quality</span>
+                    </label>
+                </fieldset>
             </form>
             <button>Button</button>
         </article>
@@ -57,5 +60,6 @@
 
     <script src="index.js"></script>
     <script src="inputs/inputs.js"></script>
+    <script src="lch/lch.js" type="module"></script>
 </body>
 </html>
